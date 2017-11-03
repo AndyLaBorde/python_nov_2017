@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home_page/styles.css')}}">
+		<script type=text/javascript src="{{url_for('static', filename='home_page/jquery-3.2.1.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='home_page/app.js')}}"></script>
+		<title>Greetings</title>
+
+	</head>
+	<body>
+		<h1>Greetings</h1>
+		<p>welcome to the wide world of ninjaness</p>
+		<img src="{{ url_for('static', filename='ninja.jpg')}}"> 
+		<a href="/ninja">Ninja Info!</a>
+		<a href="/dojo/new">Sign UP!!</a>
+	</body>
+</html>

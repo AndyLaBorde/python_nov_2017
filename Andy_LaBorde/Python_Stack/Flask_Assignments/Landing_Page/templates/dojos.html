@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+	<script type="text/javascript" src="{{url_for('static', filename='dojo_page/jquery-3.2.1.js') }}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='dojo_page/app.js') }}"></script>
+	<title>Dojo SignUp</title>
+</head>
+<body>
+	<h1>Sign Up Today For Weekly Updates!</h1>
+	<form>
+		<ul>  
+			<li>First Name:<input type="textbox" name="first_name" placeholder="John"></li>
+			<li>Last Name:<input type="textbox" name="last_name" placeholder="Doe"></li>
+			<li>Email:<input type="textbox" name="Email" placeholder="John@doe.com"></li>
+		</ul>
+		<input type="submit" name="Sign Up" value="Sign UP!">
+		<a href="/">Back to Home</a>
+	</form>
+</body>
+</html>
