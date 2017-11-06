@@ -7,10 +7,21 @@
 </head>
 <body>
 	<div class="container">
+		<div class="header">
+			<h1>DOJO SURVEY</h1>
+		</div>
 		<div class="form">
+			{% with messages = get_flashed_messages() %}
+    			{% if messages %}
+      				{% for message in messages %}
+        				<p>{{message}}</p>
+        			{% endfor %}
+				{% endif %}
+			{% endwith %}
 			<form action="/result" method="post">
 				<h4>Your Name:</h4><input type="textbox" name="name" placeholder="John Doe">
-				<h4>Dojo Location:</h4><select name="Dojo Location">
+				
+				<h4>Dojo Location:</h4><select name="dojoLocation">
 					<option value="Dallas">Dallas</option>
 					<option value="Seattle">Seattle</option>
 					<option value="Los Angeles">Los Angeles</option>
@@ -19,7 +30,7 @@
 					<option value="Chicago">Chicago</option>
 					<option value="Tulsa">Tulsa</option>
 				</select>
-				<h4>Favorite Language</h4><select name="Favorite Language">
+				<h4>Favorite Language</h4><select name="favoriteLanguage">
 					<option value="Web Fundamentals">Web Fundamentals</option>
 					<option value="Python">Python</option>
 					<option value="Ruby on Rails">Ruby on Rails</option>

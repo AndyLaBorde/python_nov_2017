@@ -1,3 +1,18 @@
-h1 {
-	margin: 0px;
+
+.container{
+	width: 1000px;
+	margin: auto;
+	background: grey;
+	border: 20px solid black;
+	border-radius: 25px;
+	text-align: center;
+}
+.header{
+	background: darkgrey;
+	border-bottom: 4px solid black;
+}
+.form {
+	background: darkgrey;
+	border-radius: 25px;
+	padding: 15px;
 }
