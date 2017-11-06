@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+	<title>Number Game</title>
+</head>
+<body>
+	<h1>Welcome to the Great Number Game!</h1>
+	<h4>I am thinking of a number between 1 and 100</h4>
+	<h4>Take a Guess!!</h4>
+	
+	<h2 class="result">{{result}}</h2>
+	<form action="/submit" method='post'>
+		<input type="textbox" name="guess">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
