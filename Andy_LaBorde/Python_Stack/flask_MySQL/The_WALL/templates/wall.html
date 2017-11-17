@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The Wall</title>
+	<a href="/">Log Out</a>
+
+</head>
+<body>
+	<div id="header">
+		<h1>Coding Dojo Wall</h1>
+		<h3>welcome {{ session['name'] }}</h3>
+	</div>
+	<div class="content">
+		<form action="/message" method="post">
+			<textarea name="message"></textarea>
+			<hidden> 
+			<button>Make A Post</button>
+		</form>
+		
+			{% for i in messages %}
+				<p><b>{{ i['first_name'] }} - {{ i['created_at']}}</b></p>
+				<p>{{ i['message'] }}</p>
+				<hr>
+				{% for j in comments %}
+				
+					{% if j['messages_id'] == i['message_id'] %}
+					<p><b>{{ j['first_name'] }} - {{ j['created_at'] }}</b></p>
+					<p>{{ j['comment'] }}</p>
+					{% endif %}
+				{% endfor %}
+		
+		<form action="/comment" method="post">
+			<textarea name="comment"></textarea>
+			<input type="hidden" name="comment_m" value="{{i['message_id']}}">
+			
+			<button type="submit">Post A Comment</button>
+		</form>
+		<hr>
+			{% endfor %}
+		
+		
+
+		
+	</div>
+</body>
+</html>
