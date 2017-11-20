@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Session Words</title>
+	</head>
+	<body>
+		<form action="/process" method="post" name="allInfo">
+			{% csrf_token %}
+			<h1>Add a new Word</h1>
+			<input type="text" name="word">
+			<h3>Pick a Color!</h3>
+			<input type="radio" name="color" value="red">Red<br>
+			<input type="radio" name="color" value="blue">Blue<br>
+			<input type="radio" name="color" value="green">Green<br>
+
+			<input type="checkbox" name="size" value="">Show in BIG fonts!<br>
+			<input type="submit" name="add" value="Add to Session">
+		</form>
+
+		<form action="/clear" method="post">
+			{% csrf_token %}
+			<input type="submit" name="clear" value="Clear Session">	
+		</form>
+	</body>
+</html>
