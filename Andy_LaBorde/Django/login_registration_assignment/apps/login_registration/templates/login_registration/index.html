@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Registration</title>
+</head>
+<body>
+	<div class="info">
+		<form action="/register" method="POST">
+			{% csrf_token %}
+			<label>First Name:</label><input type="text" name="first_name">
+			<label>Last Name:</label><input type="text" name="last_name">
+			<label>Email:</label><input type="text" name="email">
+			<label>Password</label><input type="password" name="password">
+			<label>Confirm pw:</label><input type="password" name="confirmpw">
+
+
+			<input type="submit" name="register" value="Register Now!">
+		</form>
+	<hr>
+	<div class="info">
+		<form action="/login" method="POST">
+			{% csrf_token %}
+			<label>Email:</label><input type="text" name="email">
+			<label>Password:</label><input type="pasword" name="password">
+			<input type="submit" name="login" value="Login">
+		</form>
+	<div id="errors">
+		
+			{% if errors %}
+				{% for error in errors %}
+					<p>{{errors}}</p>
+				{% endfor %}
+			{% endif %}
+</body>
+</html>
